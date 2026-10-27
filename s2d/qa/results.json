@@ -1,0 +1,23 @@
+{
+  "ok": true,
+  "file": "261027_1646_s2d.html",
+  "tests": [
+    "Start mit Microtask-Pausen zwischen HTML-Skripten",
+    "Worker-Startfehler kann ohne Neuladen wiederholt werden",
+    "Zwei Aufnahmen werden angehängt; keine OCR beim Import",
+    "Graustufen und Intensität 35 % bleiben ausgewählt",
+    "Schnelle Regleränderungen: letzter Wert gewinnt; kein OCR",
+    "Original und Schwarz-Weiß erzeugen verschiedene Bilder",
+    "Seitenwechsel startet OCR; Vollansicht und Zurück erhalten Auswahl",
+    "Weiter erkennt nur ausstehende Seiten; manuelle Felder geschützt",
+    "Sicherheitsbeschnitt zeichnet sofort eine andere Vorschau",
+    "Kanten bewegen sich nur parallel; Lupe wird ein-/ausgeblendet",
+    "Links- und Rechtsdrehung erhalten Geometrie und starten keine OCR",
+    "Speicherabfrage, Abbrechen und Zwei-Seiten-PDF",
+    "Entwurf bleibt mit Einstellungen und Seiten wiederöffnbar",
+    "Verspätete OCR nach Bildänderung wird verworfen",
+    "Gedrückt halten und ziehen sortiert ohne OCR",
+    "Ordnerregel erst nach erfolgreichem Schreiben; Nur diesmal ändert keine Regel"
+  ],
+  "limitations": "DOM, IndexedDB and OCR scheduling simulated. Actual shipped image worker, Canvas, OpenCV and PDF executed. Real browser / Android UI not tested."
+}

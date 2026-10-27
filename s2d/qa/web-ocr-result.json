@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "offline": true,
+  "language": "deu",
+  "text": "ALLIANZ VERSICHERUNG\nRechnung\n\nRechnungsdatum 22.09.2026\nGesamtbetrag 785,62 EUR\n\nKleiner Text bleibt erhalten\n",
+  "metadata": {
+    "date": "2026-09-22",
+    "sender": "allianz_versicherung",
+    "type": "rechnung",
+    "amount": "785.62",
+    "warnings": []
+  }
+}

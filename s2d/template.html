@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#205f9d"><title>S2D · Dokumente</title><link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%0A%20%20%3Crect%20x%3D%221.5%22%20y%3D%221.5%22%20width%3D%2261%22%20height%3D%2261%22%20rx%3D%2213%22%20fill%3D%22white%22%20stroke%3D%22%231d5f9d%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M18%2011h22l8%208v34H18z%22%20fill%3D%22%23dfe8f1%22%20stroke%3D%22%231d5f9d%22%20stroke-width%3D%221.6%22%20stroke-linejoin%3D%22round%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M40%2011v9h8%22%20fill%3D%22none%22%20stroke%3D%22%231d5f9d%22%20stroke-width%3D%221.6%22%20stroke-linejoin%3D%22round%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M8%2021v-7a6%206%200%200%201%206-6h7M56%2021v-7a6%206%200%200%200-6-6h-4M8%2043v7a6%206%200%200%200%206%206h7M56%2043v7a6%206%200%200%201-6%206h-4%22%20fill%3D%22none%22%20stroke%3D%22%231d5f9d%22%20stroke-width%3D%222.2%22%20stroke-linecap%3D%22round%22%2F%3E%0A%20%20%3Ctext%20x%3D%2233%22%20y%3D%2239%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20font-weight%3D%22800%22%20fill%3D%22%231d5f9d%22%3ES2D%3C%2Ftext%3E%0A%3C%2Fsvg%3E%0A">
+<style>
+:root{font-family:system-ui,-apple-system,sans-serif;color:#183650;background:#edf2f7;--blue:#205f9d;--border:#d0dde8}*{box-sizing:border-box}[hidden]{display:none!important}body{margin:0}button,input,select{font:inherit}button{border:1px solid var(--border);border-radius:12px;background:white;color:#183650;padding:.75rem 1rem;cursor:pointer;font-weight:600}button.primary{background:var(--blue);color:#fff;border-color:var(--blue)}button:disabled{opacity:.45;cursor:wait}button.danger{color:#a42626}button.active{outline:2px solid var(--blue)}input,select{border:1px solid var(--border);border-radius:10px;padding:.7rem;max-width:100%;width:100%;background:white;color:#183650}input[type=checkbox]{width:auto}header{position:sticky;top:0;background:#ffffffed;backdrop-filter:blur(10px);z-index:20;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;padding:10px 16px}header img{width:44px;height:44px}header div{flex:1}header strong{display:block}header small{color:#58738b;font-size:12px}main{max-width:1000px;margin:auto;padding:18px}h1,h2{margin:.5rem 0 1rem}h1{font-size:1.6rem}h2{font-size:1.2rem}p{line-height:1.5}.card{background:white;border:1px solid var(--border);border-radius:18px;padding:18px;margin-bottom:18px}.actions{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}.hint{font-size:.88rem;color:#526e86;line-height:1.5}.notice{background:#fff4ce;color:#685414;padding:12px;border-radius:12px;margin:12px 0;font-size:.9rem}.doc-row{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid #e0e8ef}.doc-row button{flex:1;text-align:left;overflow-wrap:anywhere}.doc-row img{width:45px;height:58px;object-fit:contain;background:#edf2f7}.doc-row small{display:block;color:#647d91;margin-top:4px}.strip{display:flex;gap:12px;overflow-x:auto;padding:12px 3px 18px;align-items:start}.thumb{width:112px;flex:0 0 112px;border:2px solid transparent;border-radius:12px;background:white;padding:6px}.thumb.selected{border-color:var(--blue)}.thumb button{border:0;padding:0;background:transparent;width:100%}.thumb img{height:124px;width:96px;object-fit:contain}.thumb span{display:block;font-size:12px;color:#536d84}.thumb .grip{padding:8px;touch-action:none;cursor:grab;background:#edf2f7;margin-top:5px}.thumb.dragging{opacity:.5}.large-single .thumb{width:190px;flex-basis:190px}.large-single .thumb img{width:172px;height:210px}.preview{display:flex;justify-content:center;background:#dae3ec;border-radius:12px;padding:12px}.preview img{max-width:100%;max-height:65vh;object-fit:contain}.tools{display:grid;gap:14px;padding-top:18px}.tools label,.field{display:grid;gap:7px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field.full{grid-column:1/-1}.camera{position:relative;background:#111d27;border-radius:16px;overflow:hidden;max-width:780px;margin:auto}.camera video{width:100%;display:block;max-height:65vh;object-fit:contain}.camera canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.shutter{width:64px;height:64px;border-radius:50%;background:var(--blue);border:6px solid white;box-shadow:0 0 0 2px var(--blue)}.footer{display:flex;justify-content:space-between;gap:10px;margin-top:18px}.status{min-height:1.5em;font-size:.85rem;color:#526e86}.editor-stage{height:60vh;position:relative;overflow:hidden;background:#1b2834;display:flex;align-items:center;justify-content:center;touch-action:none;border-radius:14px}.editor-stage canvas{max-width:94%;max-height:94%;transform-origin:center}.editor-stage.crop canvas{touch-action:none}#toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#173b5b;color:white;padding:12px 18px;border-radius:12px;z-index:100;max-width:94vw}#storageState.error{color:#a42626}progress{width:100%;height:6px}details{margin-top:14px}summary{cursor:pointer}pre{white-space:pre-wrap;max-height:250px;overflow:auto;font-size:.8rem}.filename{font-family:ui-monospace,monospace}.step{color:#537089;font-size:.85rem;margin-bottom:6px}.progress-note{color:#205f9d}@media(max-width:600px){main{padding:12px}.card{padding:14px}.fields{grid-template-columns:1fr}.field.full{grid-column:auto}header{padding:8px 12px}header button{padding:.6rem}.actions button{flex-grow:1}.thumb{width:98px;flex-basis:98px}.thumb img{width:80px;height:105px}.footer button{flex:1}}
+
+/* S2D interaction update: compact review card, no blocking busy overlay. */
+.thumb,.large-single .thumb{width:110px;flex-basis:110px;padding:3px}.thumb button{display:flex;flex-direction:column;gap:3px;touch-action:pan-y;user-select:none;-webkit-user-select:none}.thumb img,.large-single .thumb img{width:100%;height:138px;display:block;pointer-events:none}.thumb span{width:100%;height:20px;line-height:20px;overflow:hidden}.thumb.dragging{outline:3px dashed #205f9d;opacity:.65}.strip{scrollbar-width:thin;min-height:160px}.preview{width:100%;min-height:0;overflow:hidden;border:0}.preview img{height:100%;max-height:100%;max-width:100%;object-fit:contain}.tools{grid-template-columns:1fr 1fr;gap:10px;padding-top:6px}.tools label{font-size:.85rem;position:relative}.tools output{position:absolute;right:0;top:0;font-variant-numeric:tabular-nums}.tools .actions{grid-column:1/-1;display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:2px 0}.tools button{padding:.6rem .3rem;min-height:44px;font-size:.85rem}#reviewStep{height:min(820px,calc(100svh - 86px));min-height:420px;display:flex;flex-direction:column;gap:6px;scroll-margin-top:74px}#reviewStep .preview{flex:1}#reviewStep h2{margin:0;font-size:1rem}#reviewStep .step{display:none}#reviewStep p.hint{margin:0;font-size:.75rem;line-height:1.25}#reviewStep .footer{margin-top:3px}#reviewStep .footer button{padding:.6rem}#cropStatus{max-height:2.5em;overflow:auto}input[type=range]{padding:0;min-height:38px;accent-color:#205f9d}#saveStep .field{grid-template-rows:auto 48px;align-content:start}#saveStep .field select,#saveStep .field button{height:48px;min-height:48px}#saveStep .fields{row-gap:8px}.folder-row{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:16px;min-height:1.5em}#folderHint{margin-top:22px}#activity{position:fixed;right:12px;top:70px;z-index:110;background:#fffef1;border:1px solid #bfcfdd;box-shadow:0 2px 10px #1232;border-radius:18px;padding:8px 12px;font-size:.8rem;display:flex;align-items:center;gap:8px;pointer-events:none}.spinner{width:17px;height:17px;border:2px solid #c6d8e7;border-top-color:#205f9d;border-radius:50%;animation:spin .8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}dialog{border:1px solid #c8d7e3;border-radius:16px;padding:20px;max-width:calc(100vw - 24px);color:#183650}dialog::backdrop{background:#10253599}#viewer{width:100vw;height:100svh;max-width:100vw;max-height:100svh;margin:0;border:0;border-radius:0;padding:12px;background:#132635;color:white;overflow:hidden}#viewer .viewer-header{height:48px;display:flex;align-items:center;justify-content:space-between;gap:12px}#viewerStage{height:calc(100% - 72px);display:flex;justify-content:center;align-items:center;overflow:hidden;touch-action:none}#viewerImage{max-width:100%;max-height:100%;object-fit:contain;user-select:none;pointer-events:none}#viewer p{margin:4px;font-size:.75rem;color:#c4d8e8}#cropLoupe{position:fixed;width:140px;height:140px;border:3px solid white;border-radius:50%;box-shadow:0 3px 18px #0008;z-index:150;pointer-events:none}.editor-stage.crop{height:calc(100svh - 290px);min-height:220px}#cropView{padding:12px}#cropView h2{margin-top:0}#cropView .hint{font-size:.8rem;margin:5px 0}#cropView .actions{margin:8px 0;align-items:center}#cropView .actions button{padding:.6rem}#cropView .actions label{display:flex;align-items:center;gap:8px}#cropView select{width:auto}#saveChoice .actions{display:grid;grid-template-columns:1fr}
+@media(max-width:600px){.tools{grid-template-columns:1fr 1fr}#reviewStep{padding:10px;gap:5px}#reviewStep .tools label{font-size:.78rem}#reviewStep .tools select{padding:.6rem .25rem;font-size:.82rem}.tools .actions{grid-template-columns:repeat(3,1fr)}.tools .actions button:nth-child(-n+2){grid-column:auto}.thumb,.large-single .thumb{width:98px;flex-basis:98px}.thumb img,.large-single .thumb img{height:120px}.strip{min-height:147px}#saveStep .fields{grid-template-columns:1fr 1fr;gap:8px}#saveStep .field button{font-size:.8rem;padding:.4rem}.folder-row{gap:8px}#activity{top:65px;max-width:80vw}#cropView .actions{gap:5px}#cropView .actions button{font-size:.8rem}.editor-stage.crop{height:calc(100svh - 290px)}}
+</style></head><body>
+<header><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%0A%20%20%3Crect%20x%3D%221.5%22%20y%3D%221.5%22%20width%3D%2261%22%20height%3D%2261%22%20rx%3D%2213%22%20fill%3D%22white%22%20stroke%3D%22%231d5f9d%22%20stroke-width%3D%223%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M18%2011h22l8%208v34H18z%22%20fill%3D%22%23dfe8f1%22%20stroke%3D%22%231d5f9d%22%20stroke-width%3D%221.6%22%20stroke-linejoin%3D%22round%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M40%2011v9h8%22%20fill%3D%22none%22%20stroke%3D%22%231d5f9d%22%20stroke-width%3D%221.6%22%20stroke-linejoin%3D%22round%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M8%2021v-7a6%206%200%200%201%206-6h7M56%2021v-7a6%206%200%200%200-6-6h-4M8%2043v7a6%206%200%200%200%206%206h7M56%2043v7a6%206%200%200%201-6%206h-4%22%20fill%3D%22none%22%20stroke%3D%22%231d5f9d%22%20stroke-width%3D%222.2%22%20stroke-linecap%3D%22round%22%2F%3E%0A%20%20%3Ctext%20x%3D%2233%22%20y%3D%2239%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20font-weight%3D%22800%22%20fill%3D%22%231d5f9d%22%3ES2D%3C%2Ftext%3E%0A%3C%2Fsvg%3E%0A" alt="S2D"><div><strong>S2D · Scan to Document</strong><small id="engineState">Bildverarbeitung startet …</small></div><button id="showHome">Dokumente</button></header>
+<main>
+<div id="storageState" class="status" role="status">Lokalen Speicher öffnen …</div>
+<noscript><p class="notice">Bitte diese HTML in einem Browser mit aktiviertem JavaScript öffnen.</p></noscript>
+<section id="homeView">
+<div class="card"><h1>Dokumente scannen</h1><p>Aufnehmen, prüfen und lokal speichern. Deine Entwürfe bleiben in diesem Browser bearbeitbar.</p><div class="actions"><button id="startScan" class="primary">Dokument scannen</button><button id="openFilesHome">Bilder auswählen</button></div><p class="hint">Unverschlüsselte Testversion. Bilder und Texterkennung bleiben auf diesem Gerät. Alle benötigten Bibliotheken sind eingebettet.</p></div>
+<div class="card"><h2>Meine Dokumente</h2><div id="documentList"></div><div class="actions"><button id="newDocument">Neues Dokument</button><button id="backupAll">Dokumente sichern</button><button id="restoreBackup">Sicherung einlesen</button></div><p class="hint">Browserdaten können vom System gelöscht werden. Sichere wichtige Entwürfe als Datei. Eine neu benannte HTML kann einen getrennten Browser-Speicher erhalten.</p></div>
+<details class="card"><summary>Zuordnungen &amp; Einstellungen</summary><p class="hint">Datenexport enthält Absender- und Dateinamensregeln, aber keine Seitenbilder. Ordnerzugriff muss nach einem Gerätewechsel neu bestätigt werden.</p><div class="actions"><button id="exportData">Daten exportieren</button><button id="importData">Daten importieren</button></div><label><input id="ocrEnglish" type="checkbox"> OCR zusätzlich auf Englisch (mehr Rechenaufwand)</label><p class="hint">Standard: Deutsch. OCR beginnt beim Verlassen einer bearbeiteten Seite oder mit „Weiter“. Unveränderte Ergebnisse werden wiederverwendet.</p><div id="ruleList"></div><details><summary>Bibliotheken und Lizenzen</summary><pre>OpenCV.js: TechStark/opencv-js, blob 0ad5948a0b3bc2caa751c80b17a8ccd237dd3a70. OpenCV 5.0.0 build. Apache-2.0. https://github.com/TechStark/opencv-js
+
+German model: naptha/tessdata 4.0.0_fast/deu.traineddata.gz. English model: local Tesseract data. Apache-2.0. https://github.com/naptha/tessdata
+
+Tesseract.js and Tesseract.js-core: Apache-2.0.
+
+                                 Apache License
+                           Version 2.0, January 2004
+                        http://www.apache.org/licenses/
+
+   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+   1. Definitions.
+
+      "License" shall mean the terms and conditions for use, reproduction,
+      and distribution as defined by Sections 1 through 9 of this document.
+
+      "Licensor" shall mean the copyright owner or entity authorized by
+      the copyright owner that is granting the License.
+
+      "Legal Entity" shall mean the union of the acting entity and all
+      other entities that control, are controlled by, or are under common
+      control with that entity. For the purposes of this definition,
+      "control" means (i) the power, direct or indirect, to cause the
+      direction or management of such entity, whether by contract or
+      otherwise, or (ii) ownership of fifty percent (50%) or more of the
+      outstanding shares, or (iii) beneficial ownership of such entity.
+
+      "You" (or "Your") shall mean an individual or Legal Entity
+      exercising permissions granted by this License.
+
+      "Source" form shall mean the preferred form for making modifications,
+      including but not limited to software source code, documentation
+      source, and configuration files.
+
+      "Object" form shall mean any form resulting from mechanical
+      transformation or translation of a Source form, including but
+      not limited to compiled object code, generated documentation,
+      and conversions to other media types.
+
+      "Work" shall mean the work of authorship, whether in Source or
+      Object form, made available under the License, as indicated by a
+      copyright notice that is included in or attached to the work
+      (an example is provided in the Appendix below).
+
+      "Derivative Works" shall mean any work, whether in Source or Object
+      form, that is based on (or derived from) the Work and for which the
+      editorial revisions, annotations, elaborations, or other modifications
+      represent, as a whole, an original work of authorship. For the purposes
+      of this License, Derivative Works shall not include works that remain
+      separable from, or merely link (or bind by name) to the interfaces of,
+      the Work and Derivative Works thereof.
+
+      "Contribution" shall mean any work of authorship, including
+      the original version of the Work and any modifications or additions
+      to that Work or Derivative Works thereof, that is intentionally
+      submitted to Licensor for inclusion in the Work by the copyright owner
+      or by an individual or Legal Entity authorized to submit on behalf of
+      the copyright owner. For the purposes of this definition, "submitted"
+      means any form of electronic, verbal, or written communication sent
+      to the Licensor or its representatives, including but not limited to
+      communication on electronic mailing lists, source code control systems,
+      and issue tracking systems that are managed by, or on behalf of, the
+      Licensor for the purpose of discussing and improving the Work, but
+      excluding communication that is conspicuously marked or otherwise
+      designated in writing by the copyright owner as "Not a Contribution."
+
+      "Contributor" shall mean Licensor and any individual or Legal Entity
+      on behalf of whom a Contribution has been received by Licensor and
+      subsequently incorporated within the Work.
+
+   2. Grant of Copyright License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      copyright license to reproduce, prepare Derivative Works of,
+      publicly display, publicly perform, sublicense, and distribute the
+      Work and such Derivative Works in Source or Object form.
+
+   3. Grant of Patent License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      (except as stated in this section) patent license to make, have made,
+      use, offer to sell, sell, import, and otherwise transfer the Work,
+      where such license applies only to those patent claims licensable
+      by such Contributor that are necessarily infringed by their
+      Contribution(s) alone or by combination of their Contribution(s)
+      with the Work to which such Contribution(s) was submitted. If You
+      institute patent litigation against any entity (including a
+      cross-claim or counterclaim in a lawsuit) alleging that the Work
+      or a Contribution incorporated within the Work constitutes direct
+      or contributory patent infringement, then any patent licenses
+      granted to You under this License for that Work shall terminate
+      as of the date such litigation is filed.
+
+   4. Redistribution. You may reproduce and distribute copies of the
+      Work or Derivative Works thereof in any medium, with or without
+      modifications, and in Source or Object form, provided that You
+      meet the following conditions:
+
+      (a) You must give any other recipients of the Work or
+          Derivative Works a copy of this License; and
+
+      (b) You must cause any modified files to carry prominent notices
+          stating that You changed the files; and
+
+      (c) You must retain, in the Source form of any Derivative Works
+          that You distribute, all copyright, patent, trademark, and
+          attribution notices from the Source form of the Work,
+          excluding those notices that do not pertain to any part of
+          the Derivative Works; and
+
+      (d) If the Work includes a "NOTICE" text file as part of its
+          distribution, then any Derivative Works that You distribute must
+          include a readable copy of the attribution notices contained
+          within such NOTICE file, excluding those notices that do not
+          pertain to any part of the Derivative Works, in at least one
+          of the following places: within a NOTICE text file distributed
+          as part of the Derivative Works; within the Source form or
+          documentation, if provided along with the Derivative Works; or,
+          within a display generated by the Derivative Works, if and
+          wherever such third-party notices normally appear. The contents
+          of the NOTICE file are for informational purposes only and
+          do not modify the License. You may add Your own attribution
+          notices within Derivative Works that You distribute, alongside
+          or as an addendum to the NOTICE text from the Work, provided
+          that such additional attribution notices cannot be construed
+          as modifying the License.
+
+      You may add Your own copyright statement to Your modifications and
+      may provide additional or different license terms and conditions
+      for use, reproduction, or distribution of Your modifications, or
+      for any such Derivative Works as a whole, provided Your use,
+      reproduction, and distribution of the Work otherwise complies with
+      the conditions stated in this License.
+
+   5. Submission of Contributions. Unless You explicitly state otherwise,
+      any Contribution intentionally submitted for inclusion in the Work
+      by You to the Licensor shall be under the terms and conditions of
+      this License, without any additional terms or conditions.
+      Notwithstanding the above, nothing herein shall supersede or modify
+      the terms of any separate license agreement you may have executed
+      with Licensor regarding such Contributions.
+
+   6. Trademarks. This License does not grant permission to use the trade
+      names, trademarks, service marks, or product names of the Licensor,
+      except as required for reasonable and customary use in describing the
+      origin of the Work and reproducing the content of the NOTICE file.
+
+   7. Disclaimer of Warranty. Unless required by applicable law or
+      agreed to in writing, Licensor provides the Work (and each
+      Contributor provides its Contributions) on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+      implied, including, without limitation, any warranties or conditions
+      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
+      PARTICULAR PURPOSE. You are solely responsible for determining the
+      appropriateness of using or redistributing the Work and assume any
+      risks associated with Your exercise of permissions under this License.
+
+   8. Limitation of Liability. In no event and under no legal theory,
+      whether in tort (including negligence), contract, or otherwise,
+      unless required by applicable law (such as deliberate and grossly
+      negligent acts) or agreed to in writing, shall any Contributor be
+      liable to You for damages, including any direct, indirect, special,
+      incidental, or consequential damages of any character arising as a
+      result of this License or out of the use or inability to use the
+      Work (including but not limited to damages for loss of goodwill,
+      work stoppage, computer failure or malfunction, or any and all
+      other commercial damages or losses), even if such Contributor
+      has been advised of the possibility of such damages.
+
+   9. Accepting Warranty or Additional Liability. While redistributing
+      the Work or Derivative Works thereof, You may choose to offer,
+      and charge a fee for, acceptance of support, warranty, indemnity,
+      or other liability obligations and/or rights consistent with this
+      License. However, in accepting such obligations, You may act only
+      on Your own behalf and on Your sole responsibility, not on behalf
+      of any other Contributor, and only if You agree to indemnify,
+      defend, and hold each Contributor harmless for any liability
+      incurred by, or claims asserted against, such Contributor by reason
+      of your accepting any such warranty or additional liability.
+
+   END OF TERMS AND CONDITIONS
+
+   APPENDIX: How to apply the Apache License to your work.
+
+      To apply the Apache License to your work, attach the following
+      boilerplate notice, with the fields enclosed by brackets "{}"
+      replaced with your own identifying information. (Don't include
+      the brackets!)  The text should be enclosed in the appropriate
+      comment syntax for the file format. We also recommend that a
+      file or class name and description of purpose be included on the
+      same "printed page" as the copyright notice for easier
+      identification within third-party archives.
+
+   Copyright {yyyy} {name of copyright owner}
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+
+                                 Apache License
+                           Version 2.0, January 2004
+                        http://www.apache.org/licenses/
+
+   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+   1. Definitions.
+
+      "License" shall mean the terms and conditions for use, reproduction,
+      and distribution as defined by Sections 1 through 9 of this document.
+
+      "Licensor" shall mean the copyright owner or entity authorized by
+      the copyright owner that is granting the License.
+
+      "Legal Entity" shall mean the union of the acting entity and all
+      other entities that control, are controlled by, or are under common
+      control with that entity. For the purposes of this definition,
+      "control" means (i) the power, direct or indirect, to cause the
+      direction or management of such entity, whether by contract or
+      otherwise, or (ii) ownership of fifty percent (50%) or more of the
+      outstanding shares, or (iii) beneficial ownership of such entity.
+
+      "You" (or "Your") shall mean an individual or Legal Entity
+      exercising permissions granted by this License.
+
+      "Source" form shall mean the preferred form for making modifications,
+      including but not limited to software source code, documentation
+      source, and configuration files.
+
+      "Object" form shall mean any form resulting from mechanical
+      transformation or translation of a Source form, including but
+      not limited to compiled object code, generated documentation,
+      and conversions to other media types.
+
+      "Work" shall mean the work of authorship, whether in Source or
+      Object form, made available under the License, as indicated by a
+      copyright notice that is included in or attached to the work
+      (an example is provided in the Appendix below).
+
+      "Derivative Works" shall mean any work, whether in Source or Object
+      form, that is based on (or derived from) the Work and for which the
+      editorial revisions, annotations, elaborations, or other modifications
+      represent, as a whole, an original work of authorship. For the purposes
+      of this License, Derivative Works shall not include works that remain
+      separable from, or merely link (or bind by name) to the interfaces of,
+      the Work and Derivative Works thereof.
+
+      "Contribution" shall mean any work of authorship, including
+      the original version of the Work and any modifications or additions
+      to that Work or Derivative Works thereof, that is intentionally
+      submitted to Licensor for inclusion in the Work by the copyright owner
+      or by an individual or Legal Entity authorized to submit on behalf of
+      the copyright owner. For the purposes of this definition, "submitted"
+      means any form of electronic, verbal, or written communication sent
+      to the Licensor or its representatives, including but not limited to
+      communication on electronic mailing lists, source code control systems,
+      and issue tracking systems that are managed by, or on behalf of, the
+      Licensor for the purpose of discussing and improving the Work, but
+      excluding communication that is conspicuously marked or otherwise
+      designated in writing by the copyright owner as "Not a Contribution."
+
+      "Contributor" shall mean Licensor and any individual or Legal Entity
+      on behalf of whom a Contribution has been received by Licensor and
+      subsequently incorporated within the Work.
+
+   2. Grant of Copyright License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      copyright license to reproduce, prepare Derivative Works of,
+      publicly display, publicly perform, sublicense, and distribute the
+      Work and such Derivative Works in Source or Object form.
+
+   3. Grant of Patent License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      (except as stated in this section) patent license to make, have made,
+      use, offer to sell, sell, import, and otherwise transfer the Work,
+      where such license applies only to those patent claims licensable
+      by such Contributor that are necessarily infringed by their
+      Contribution(s) alone or by combination of their Contribution(s)
+      with the Work to which such Contribution(s) was submitted. If You
+      institute patent litigation against any entity (including a
+      cross-claim or counterclaim in a lawsuit) alleging that the Work
+      or a Contribution incorporated within the Work constitutes direct
+      or contributory patent infringement, then any patent licenses
+      granted to You under this License for that Work shall terminate
+      as of the date such litigation is filed.
+
+   4. Redistribution. You may reproduce and distribute copies of the
+      Work or Derivative Works thereof in any medium, with or without
+      modifications, and in Source or Object form, provided that You
+      meet the following conditions:
+
+      (a) You must give any other recipients of the Work or
+          Derivative Works a copy of this License; and
+
+      (b) You must cause any modified files to carry prominent notices
+          stating that You changed the files; and
+
+      (c) You must retain, in the Source form of any Derivative Works
+          that You distribute, all copyright, patent, trademark, and
+          attribution notices from the Source form of the Work,
+          excluding those notices that do not pertain to any part of
+          the Derivative Works; and
+
+      (d) If the Work includes a "NOTICE" text file as part of its
+          distribution, then any Derivative Works that You distribute must
+          include a readable copy of the attribution notices contained
+          within such NOTICE file, excluding those notices that do not
+          pertain to any part of the Derivative Works, in at least one
+          of the following places: within a NOTICE text file distributed
+          as part of the Derivative Works; within the Source form or
+          documentation, if provided along with the Derivative Works; or,
+          within a display generated by the Derivative Works, if and
+          wherever such third-party notices normally appear. The contents
+          of the NOTICE file are for informational purposes only and
+          do not modify the License. You may add Your own attribution
+          notices within Derivative Works that You distribute, alongside
+          or as an addendum to the NOTICE text from the Work, provided
+          that such additional attribution notices cannot be construed
+          as modifying the License.
+
+      You may add Your own copyright statement to Your modifications and
+      may provide additional or different license terms and conditions
+      for use, reproduction, or distribution of Your modifications, or
+      for any such Derivative Works as a whole, provided Your use,
+      reproduction, and distribution of the Work otherwise complies with
+      the conditions stated in this License.
+
+   5. Submission of Contributions. Unless You explicitly state otherwise,
+      any Contribution intentionally submitted for inclusion in the Work
+      by You to the Licensor shall be under the terms and conditions of
+      this License, without any additional terms or conditions.
+      Notwithstanding the above, nothing herein shall supersede or modify
+      the terms of any separate license agreement you may have executed
+      with Licensor regarding such Contributions.
+
+   6. Trademarks. This License does not grant permission to use the trade
+      names, trademarks, service marks, or product names of the Licensor,
+      except as required for reasonable and customary use in describing the
+      origin of the Work and reproducing the content of the NOTICE file.
+
+   7. Disclaimer of Warranty. Unless required by applicable law or
+      agreed to in writing, Licensor provides the Work (and each
+      Contributor provides its Contributions) on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+      implied, including, without limitation, any warranties or conditions
+      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
+      PARTICULAR PURPOSE. You are solely responsible for determining the
+      appropriateness of using or redistributing the Work and assume any
+      risks associated with Your exercise of permissions under this License.
+
+   8. Limitation of Liability. In no event and under no legal theory,
+      whether in tort (including negligence), contract, or otherwise,
+      unless required by applicable law (such as deliberate and grossly
+      negligent acts) or agreed to in writing, shall any Contributor be
+      liable to You for damages, including any direct, indirect, special,
+      incidental, or consequential damages of any character arising as a
+      result of this License or out of the use or inability to use the
+      Work (including but not limited to damages for loss of goodwill,
+      work stoppage, computer failure or malfunction, or any and all
+      other commercial damages or losses), even if such Contributor
+      has been advised of the possibility of such damages.
+
+   9. Accepting Warranty or Additional Liability. While redistributing
+      the Work or Derivative Works thereof, You may choose to offer,
+      and charge a fee for, acceptance of support, warranty, indemnity,
+      or other liability obligations and/or rights consistent with this
+      License. However, in accepting such obligations, You may act only
+      on Your own behalf and on Your sole responsibility, not on behalf
+      of any other Contributor, and only if You agree to indemnify,
+      defend, and hold each Contributor harmless for any liability
+      incurred by, or claims asserted against, such Contributor by reason
+      of your accepting any such warranty or additional liability.
+
+   END OF TERMS AND CONDITIONS
+
+   APPENDIX: How to apply the Apache License to your work.
+
+      To apply the Apache License to your work, attach the following
+      boilerplate notice, with the fields enclosed by brackets "{}"
+      replaced with your own identifying information. (Don't include
+      the brackets!)  The text should be enclosed in the appropriate
+      comment syntax for the file format. We also recommend that a
+      file or class name and description of purpose be included on the
+      same "printed page" as the copyright notice for easier
+      identification within third-party archives.
+
+   Copyright {yyyy} {name of copyright owner}
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+
+
+MIT License
+
+Copyright (c) 2019 Andrew Dillon
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+</pre></details></details>
+</section>
+<section id="workspace" hidden>
+<div class="actions" id="captureActions"><button id="scanMore" class="primary">Weitere Seite scannen</button><button id="openFilesCapture">Bilder hinzufügen</button></div>
+<section id="livePanel" class="card" hidden><div class="camera"><video id="cameraVideo" autoplay playsinline muted></video><canvas id="liveOverlay"></canvas></div><p id="liveStatus" class="status">Kamera startet …</p><div class="actions"><button id="captureFrame" class="shutter" aria-label="Seite aufnehmen" disabled></button><label><input id="autoCapture" type="checkbox" checked> Automatisch aufnehmen</label><button id="closeCamera">Kamera beenden</button></div></section>
+<p id="captureNotice" class="hint" hidden>Systemkamera: Nach jeder Aufnahme erscheint hier deine bearbeitete Seite. Für die nächste Seite „Weitere Seite scannen“ wählen.</p>
+<div id="pageStrip" class="strip" aria-label="Seitenübersicht"></div>
+<p id="pageSummary" class="status"></p><p id="ocrStatus" class="status" role="status"></p>
+<section id="captureStep" class="card"><p>Die Seiten werden automatisch zugeschnitten, verbessert und als Entwurf gesichert.</p><button id="finishCapture" class="primary">Seiten prüfen</button></section>
+<section id="reviewStep" class="card" hidden><div class="step">1 · Seiten prüfen</div><h2>Ausgewählte Seite</h2><button id="openLargePreview" class="preview" aria-label="Ausgewählte Seite groß anzeigen"><img id="largePreview" alt="Ausgewählte Dokumentseite"></button><p id="cropStatus" class="hint"></p><div class="tools"><label>Darstellung<select id="filterMode"><option value="auto">Auto Farbe</option><option value="original">Original</option><option value="gray">Graustufen</option><option value="bw">Schwarz-Weiß</option></select></label><label>Intensität <output id="strengthValue">100 %</output><input id="enhanceStrength" type="range" min="0" max="100" value="80"></label><div class="actions"><button id="rotateLeft" aria-label="90 Grad nach links drehen">↶ Links</button><button id="rotateRight" aria-label="90 Grad nach rechts drehen">↷ Rechts</button><button id="cropPage">Zuschneiden</button><button id="retouchPage">Bereinigen</button><button id="deletePage" class="danger">Löschen</button></div></div><p class="hint">Miniatur antippen: Vollansicht. Gedrückt halten und ziehen: sortieren.</p><div class="footer"><button id="backCapture">Weitere Seiten</button><button id="continueMetadata" class="primary">Weiter</button></div></section>
+<section id="metadataStep" class="card" hidden><div class="step">2 · Erkennung und Dateiname</div><h2>Dateiname prüfen</h2><p id="metadataNotice" class="notice"></p><div class="fields"><label class="field">Dokumentdatum<input id="docDate" type="date"></label><label class="field">Absender<input id="sender" autocomplete="off"></label><label class="field">Dokumentart<input id="docType"></label><label class="field">Gesamtbetrag in €<input id="amount" inputmode="decimal" placeholder="785,62"></label><label class="field full">Dateiname ohne Endung<input id="filenameMeta" class="filename"></label></div><div class="actions"><button id="retryOcr">OCR erneut ausführen</button><button id="acceptOcr">OCR-Vorschlag übernehmen</button></div><details><summary>Erkannten Text ansehen</summary><pre id="recognizedText"></pre></details><div class="footer"><button id="backReview">Zurück</button><button id="continueSave" class="primary">Weiter</button></div></section>
+<section id="saveStep" class="card" hidden><div class="step">3 · Exportieren</div><h2>Speichern</h2><div class="fields"><label class="field">Format<select id="format"><option value="pdf">PDF</option><option value="jpg">Einzelbilder JPG</option><option value="png">Einzelbilder PNG</option></select></label><div class="field"><span>Speicherort</span><button id="chooseFolder">Speicherort auswählen</button></div><div class="folder-row"><span></span><span id="folderLabel" class="hint"></span></div></div><p id="folderHint" class="hint"></p><p id="exportName" class="filename"></p><div class="footer"><button id="backMetadata">Zurück</button><button id="saveDocument" class="primary">Jetzt speichern</button></div></section>
+<section id="doneStep" class="card" hidden><h2 id="doneTitle">Export abgeschlossen</h2><p id="doneMessage"></p><div class="actions"><button id="editAgain">Weiter bearbeiten</button><button id="doneHome" class="primary">Meine Dokumente</button></div></section>
+</section>
+<section id="cropView" class="card" hidden><h2>Dokumentkanten</h2><p class="hint">Ecken frei ziehen; Seitenkanten parallel verschieben. Gelb: verbleibender Bereich nach Sicherheitsbeschnitt. Neuer Zuschnitt setzt Retuschen zurück.</p><div id="cropStage" class="editor-stage crop"><canvas id="cropCanvas"></canvas></div><div class="actions"><button id="cropDetect">Neu erkennen</button><button id="cropFull">Ganzes Foto</button><label>Sicherheitsbeschnitt <select id="cropInset"><option value="0">0 %</option><option value="0.005" selected>0,5 %</option><option value="0.01">1 %</option><option value="0.015">1,5 %</option><option value="0.02">2 %</option><option value="0.03">3 %</option><option value="0.04">4 %</option><option value="0.05">5 %</option></select></label></div><div class="footer"><button id="cropCancel">Abbrechen</button><button id="cropApply" class="primary">Übernehmen</button></div></section>
+<section id="retouchView" class="card" hidden><h2>Bereinigen</h2><div class="actions"><button id="toolWhite" class="active">Weiß</button><button id="toolSmart">Papierfarbe</button><button id="toolPan">Verschieben</button><button id="undo">Rückgängig</button><button id="redo">Wiederholen</button></div><label>Radiergröße <input id="brushSize" type="range" min="3" max="60" value="16"></label><div id="editStage" class="editor-stage"><canvas id="editCanvas"></canvas></div><p class="hint">Ein Finger: ausgewähltes Werkzeug. Zwei Finger: zoomen und verschieben. Papierfarbe übernimmt die helle Umgebung; verdeckter Text wird nicht rekonstruiert.</p><div class="actions"><button id="zoomOut">−</button><span id="zoomValue">100 %</span><button id="zoomIn">+</button><button id="resetZoom">Ansicht zurücksetzen</button></div><div class="footer"><button id="editCancel">Abbrechen</button><button id="editApply" class="primary">Übernehmen</button></div></section>
+</main><div id="toast" role="status" hidden></div><input id="fileCapture" type="file" accept="image/*" capture="environment" hidden><input id="fileGallery" type="file" accept="image/*" multiple hidden><input id="dataImport" type="file" accept="application/json,.json" hidden><input id="backupImport" type="file" accept="application/json,.json" hidden>
+<div id="activity" role="status" hidden><span class="spinner" aria-hidden="true"></span><span id="activityText"></span></div>
+<canvas id="cropLoupe" width="180" height="180" hidden aria-hidden="true"></canvas>
+<dialog id="viewer" aria-labelledby="viewerTitle"><div class="viewer-header"><strong id="viewerTitle">Seite</strong><button id="viewerClose">Zurück</button></div><div id="viewerStage"><img id="viewerImage" alt="Ganzseitenansicht"></div><p>Zwei Finger: Zoom · Ziehen: verschieben · Doppeltippen: Zoom · Zurück: Bearbeitung</p></dialog>
+<dialog id="saveChoice" aria-labelledby="saveChoiceTitle"><h2 id="saveChoiceTitle">Zielordner zuordnen</h2><p id="saveChoiceText"></p><div class="actions"><button id="saveRemember" class="primary">Speichern und merken</button><button id="saveOnce">Nur diesmal speichern</button><button id="saveCancel">Abbrechen</button></div></dialog>
+<script id="embedded-assets" type="application/json">__ASSETS_JSON__</script>
+<script>__PDF-LIB_JS__</script><script>__TESSERACT_JS__</script><script id="opencv-source" type="text/plain">__OPENCV_JS__</script><script id="vision-source">__VISION_JS__</script><script>__METADATA_JS__</script><script id="image-worker-source" type="text/plain">__IMAGE-WORKER_JS__</script><script>__APP_JS__</script><script>__EXTRAS_JS__</script>
+</body></html>

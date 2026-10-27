@@ -1,0 +1,9 @@
+/.codex/
+/.library-tools-*/
+/upload/
+/dist/
+/web/
+/s2d/qa/extracted/
+*.bundle
+
+/downloads/*.html

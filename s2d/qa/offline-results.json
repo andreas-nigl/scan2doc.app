@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "build": "bf0f3cc571d924da",
+  "tests": [
+    "Offline bereit erst nach vollständiger, SHA-256-geprüfter Installation",
+    "Navigation und sämtliche 17 App-Ressourcen ohne Netzwerk verfügbar",
+    "Dokumente, APIs, fremde Projekte und POST werden nicht gecacht",
+    "Fehlende Datei verhindert Offline-Freigabe und räumt Teilkopie auf",
+    "Abweichende Bytes verhindern gemischten oder beschädigten App-Stand",
+    "Aktivierung erhält vorige Version und löscht keine fremden App-Caches",
+    "Manifest, Worker-Importe und externe HTML-Skripte liegen im Offlinepaket"
+  ],
+  "limitations": "CacheStorage, browser lifecycle and network simulated. Shipped bytes and real SHA-256 used. Real browser/Android airplane-mode test remains open."
+}

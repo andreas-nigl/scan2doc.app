@@ -1,0 +1,132 @@
+{
+  "build": "bf0f3cc571d924da",
+  "builtAt": "2026-10-27T15:50:19.040Z",
+  "bytes": 23764510,
+  "indexBytes": 45347,
+  "assetDirectory": "assets/bf0f3cc571d924da/",
+  "files": [
+    {
+      "path": "assets/bf0f3cc571d924da/app.js",
+      "bytes": 47148,
+      "sha256": "9a86d47657d33e012d62acf631dc98e941c12cb3769e81399374be3b0a3d97f6",
+      "label": "App-Dateien"
+    },
+    {
+      "path": "assets/bf0f3cc571d924da/extras.js",
+      "bytes": 15112,
+      "sha256": "561d4822c6d7b25abad60ddb56d7b6d8870043ced0818c301f5f1f221da515b5",
+      "label": "App-Dateien"
+    },
+    {
+      "path": "assets/bf0f3cc571d924da/metadata.js",
+      "bytes": 4040,
+      "sha256": "1fefd182f3746de97ea449f34a357c837e38c7a03010fb434ba491169620e7b2",
+      "label": "App-Dateien"
+    },
+    {
+      "path": "assets/bf0f3cc571d924da/vision.js",
+      "bytes": 8454,
+      "sha256": "8847ec0d87d7db7985975cf84f149ce1e477bee55ab0bfd564f6159f9954f9fb",
+      "label": "App-Dateien"
+    },
+    {
+      "path": "assets/bf0f3cc571d924da/pdf-lib.js",
+      "bytes": 525099,
+      "sha256": "0f9a5cad07941f0826586c94e089d89b918c46e5c17cf2d5a3c6f666e3bc694f",
+      "label": "App-Dateien"
+    },
+    {
+      "path": "assets/bf0f3cc571d924da/tesseract.js",
+      "bytes": 62961,
+      "sha256": "000c27d9cd0def655f77b36c72a389c0ab13793aa31cb4d7aab56d09c0afbc7e",
+      "label": "App-Dateien"
+    },
+    {
+      "path": "assets/bf0f3cc571d924da/opencv.js",
+      "bytes": 13298870,
+      "sha256": "fff89d4ae3db9144a18a13161dd45547af688cf2191674a640ca131df99cc228",
+      "label": "Bildverarbeitung"
+    },
+    {
+      "path": "assets/bf0f3cc571d924da/image-worker.js",
+      "bytes": 4463,
+      "sha256": "555ed72e65cdab548c19c9dbb27ee66c90d4d735ee56f3a58d75dc776d76ed93",
+      "label": "App-Dateien"
+    },
+    {
+      "path": "assets/bf0f3cc571d924da/ocr-worker.js",
+      "bytes": 4008109,
+      "sha256": "981804557d19228890b9784071a76e66a7a3b727c99f0751341942576f98c0b1",
+      "label": "OCR-Programm"
+    },
+    {
+      "path": "assets/bf0f3cc571d924da/deu.traineddata",
+      "bytes": 1525436,
+      "sha256": "19d219bbb6672c869d20a9636c6816a81eb9a71796cb93ebe0cb1530e2cdb22d",
+      "label": "OCR-Sprachdaten Deutsch"
+    },
+    {
+      "path": "assets/bf0f3cc571d924da/eng.traineddata",
+      "bytes": 4113088,
+      "sha256": "7d4322bd2a7749724879683fc3912cb542f19906c83bcc1a52132556427170b2",
+      "label": "OCR-Sprachdaten Englisch"
+    },
+    {
+      "path": "assets/bf0f3cc571d924da/offline-client.js",
+      "bytes": 6447,
+      "sha256": "f259554d82a6266c67781b3c15620e5e04e5c80c5698945ed8f1f97e0edbeff1",
+      "label": "App-Dateien"
+    },
+    {
+      "path": "assets/bf0f3cc571d924da/icon.svg",
+      "bytes": 696,
+      "sha256": "ab4801f08a1d4cc961e4411f217f33e5b2ad957add62aedef08e71e8ca1ab549",
+      "label": "App-Dateien"
+    },
+    {
+      "path": "assets/bf0f3cc571d924da/icon-192.png",
+      "bytes": 17442,
+      "sha256": "560f4775aa042a7bba075897d8d3f59f50e3e76410430f2063d6f3e87e4573bd",
+      "label": "App-Dateien"
+    },
+    {
+      "path": "assets/bf0f3cc571d924da/icon-512.png",
+      "bytes": 81178,
+      "sha256": "35a3b3d0fa0d6aa3ef309b3135f8bcdfcdcacae96ed436a25d9eb224858cef10",
+      "label": "App-Dateien"
+    },
+    {
+      "path": "manifest.webmanifest",
+      "bytes": 620,
+      "sha256": "52ce2e21f894333ca0904141d888566d48cd41f74eec40c4197764c46b9a4951",
+      "label": "Installationsdaten"
+    },
+    {
+      "path": "index.html",
+      "bytes": 45347,
+      "sha256": "2f9d8baf74b5c8ce30f98e14816ec79cdd1a2c3dbfcc4c4996f9ff73c09174d3",
+      "label": "App-Oberfläche"
+    }
+  ],
+  "deployFiles": [
+    "assets/bf0f3cc571d924da/app.js",
+    "assets/bf0f3cc571d924da/extras.js",
+    "assets/bf0f3cc571d924da/metadata.js",
+    "assets/bf0f3cc571d924da/vision.js",
+    "assets/bf0f3cc571d924da/pdf-lib.js",
+    "assets/bf0f3cc571d924da/tesseract.js",
+    "assets/bf0f3cc571d924da/opencv.js",
+    "assets/bf0f3cc571d924da/image-worker.js",
+    "assets/bf0f3cc571d924da/ocr-worker.js",
+    "assets/bf0f3cc571d924da/deu.traineddata",
+    "assets/bf0f3cc571d924da/eng.traineddata",
+    "assets/bf0f3cc571d924da/offline-client.js",
+    "assets/bf0f3cc571d924da/icon.svg",
+    "assets/bf0f3cc571d924da/icon-192.png",
+    "assets/bf0f3cc571d924da/icon-512.png",
+    "manifest.webmanifest",
+    "index.html",
+    "offline-worker.js",
+    ".nojekyll"
+  ]
+}

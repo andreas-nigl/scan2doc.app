@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect x="1.5" y="1.5" width="61" height="61" rx="13" fill="white" stroke="#1d5f9d" stroke-width="3"/>
+  <path d="M18 11h22l8 8v34H18z" fill="#dfe8f1" stroke="#1d5f9d" stroke-width="1.6" stroke-linejoin="round"/>
+  <path d="M40 11v9h8" fill="none" stroke="#1d5f9d" stroke-width="1.6" stroke-linejoin="round"/>
+  <path d="M8 21v-7a6 6 0 0 1 6-6h7M56 21v-7a6 6 0 0 0-6-6h-4M8 43v7a6 6 0 0 0 6 6h7M56 43v7a6 6 0 0 1-6 6h-4" fill="none" stroke="#1d5f9d" stroke-width="2.2" stroke-linecap="round"/>
+  <text x="33" y="39" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" font-weight="800" fill="#1d5f9d">S2D</text>
+</svg>

@@ -1,0 +1,26 @@
+{
+  "id": "./",
+  "name": "S2D · Scan to Document",
+  "short_name": "S2D",
+  "lang": "de",
+  "description": "Dokumente lokal scannen, bearbeiten, erkennen und als PDF oder Bilder speichern.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#edf2f7",
+  "theme_color": "#205f9d",
+  "icons": [
+    {
+      "src": "assets/bf0f3cc571d924da/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/bf0f3cc571d924da/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "build": "bf0f3cc571d924da",
+  "tests": [
+    "Offline-Start prüft installierte Kopie ohne neue Registrierung",
+    "Fehlgeschlagene Onlineprüfung erhält bestätigten Offline-Status",
+    "Fehlende Offline-Dateien werden nicht als bereit ausgegeben",
+    "Erstinstallation wird erst nach Aktivierung als offline bereit angezeigt",
+    "Update verlangt Schließen der App; Speicherzusage wird nicht vorgetäuscht"
+  ],
+  "limitations": "DOM, MessageChannel and ServiceWorker registration simulated. No browser UI or installation dialog tested."
+}
