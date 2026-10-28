@@ -1,6 +1,6 @@
 # S2D – maßgeblicher Projektstand
 
-Version 5 · 27.10.2026 · Erstveröffentlichung scan2doc.app
+Version 6 · 28.10.2026 · Veröffentlichung und HTTP-Prüfung bestätigt
 
 ## Ausgangspunkt und Wiederherstellung
 
@@ -21,8 +21,8 @@ ist ab jetzt die fortzuführende Projektquelle; keine parallele Wissensbasis anl
   `vision.js`, der Oberfläche und den bestehenden Bibliotheken. Keine getrennte App-Logik.
 - Dateinamenszeit Europe/Berlin. Standalone-Build UTC `2026-10-27T15:46:08.430Z`.
 - Tatsächliches Repository: `andreas-nigl/scan2doc.app`, Public, Branch `main`.
-  Vom Nutzer eingerichtet; Pages ist laut GitHub-Metadaten aktiviert. Vor der
-  Erstbefüllung enthielt es nur eine README; der Pages-Aufruf lieferte HTTP 404.
+  Öffentlich erreichbar: https://andreas-nigl.github.io/scan2doc.app/
+  Pages-Veröffentlichung erfolgreich; Details und Prüfumfang am Dokumentende.
   Der frühere Name `s2d.app` war nur ein Vorschlag und ist nicht der Repositoryname.
 - Webdateien und Quellen werden gemeinsam veröffentlicht. Die unveränderte Standalone
   liegt zusätzlich unter `downloads/261027_1646_s2d.zip`. Keine persönlichen Scans,
@@ -321,3 +321,39 @@ in einem Tree auf Basis dieses Nutzercommits und erhält damit dessen Verlauf.
 OpenCV liegt danach in `s2d/opencv.js` sowie im Assetordner; die temporäre Rootkopie
 entfällt. Die unveränderte Standalone ist als ZIP im Downloadordner vorhanden.
 Danach sind Pages-Bereitstellung und alle 17 tatsächlichen HTTP-Ressourcen zu prüfen.
+
+
+## Veröffentlichung abgeschlossen und geprüft – 28.10.2026
+
+Veröffentlichungscommit: `f0dc8c411878a9485d91eb3fbcef2368d8a92f54`.
+Er erhält den manuellen Nutzerupload als Elterncommit. OpenCV liegt in
+`s2d/opencv.js` (Quellbibliothek) und
+`assets/bf0f3cc571d924da/opencv.js` (ausgelieferte Webbibliothek).
+Die temporäre `opencv.js` in der Repositorywurzel wurde entfernt. Beide
+Bibliothekspfade referenzieren denselben geprüften Git-Blob.
+
+GitHub-Pages-Lauf 40563178951 ist erfolgreich abgeschlossen:
+https://github.com/andreas-nigl/scan2doc.app/actions/runs/40563178951
+
+Die öffentliche App https://andreas-nigl.github.io/scan2doc.app/ liefert HTTP 200.
+Alle 17 Offline-Ressourcen, der Offline-Worker und der Standalone-ZIP-Download
+wurden vollständig über HTTP heruntergeladen und gegen lokale Größen und
+SHA-256 geprüft: 19 erfolgreiche Ressourcen, insgesamt 33.102.504 Byte.
+Auch der unveränderte Inhalt der HTML im ZIP wurde geprüft (CRC und SHA-256).
+Bericht: `s2d/qa/http-deployment.json`. Build bleibt `bf0f3cc571d924da`.
+
+Standalone-Download:
+https://andreas-nigl.github.io/scan2doc.app/downloads/261027_1646_s2d.zip
+
+Ein echter Cloud-Browser zeigte nach dem Start „Bildverarbeitung bereit · OCR
+lokal“ und „Offline bereit · Kamera, OCR und Export lokal verfügbar“.
+Der anschließende Browser-Bildimporttest wurde abgebrochen und ist nicht als
+bestanden zu werten. Eine vollständig netzgetrennte Browserprüfung sowie Tests
+auf dem Android-Gerät (Kamera, Speicher, Gesten und Flugmodus) stehen aus.
+Vorhandene automatisierte Funktions- und Workerprüfungen bleiben gültig; ihre
+Simulationen werden dadurch nicht zu einem vollständigen Gerätetest.
+
+Beim ersten Online-Aufruf auf „Offline bereit“ warten. Dokumente und Entwürfe
+bleiben im jeweiligen Browserspeicher. Löschung oder Verdrängung von Browserdaten
+kann sie entfernen; lokale Exporte und Datensicherungen bleiben erforderlich.
+Keine privaten Scans oder Regeln wurden ins Repository übernommen.
