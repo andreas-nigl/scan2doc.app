@@ -357,3 +357,14 @@ Beim ersten Online-Aufruf auf „Offline bereit“ warten. Dokumente und Entwür
 bleiben im jeweiligen Browserspeicher. Löschung oder Verdrängung von Browserdaten
 kann sie entfernen; lokale Exporte und Datensicherungen bleiben erforderlich.
 Keine privaten Scans oder Regeln wurden ins Repository übernommen.
+
+
+## Vergleich privater Scanexporte – 20.11.2026 (nur Analyse)
+
+- Vier inhaltlich entsprechende Doppelseiten wurden in zwei vorhandenen Exportfassungen geprüft. Keine Beispieldateien, personenbezogenen Inhalte oder Screenshots ins öffentliche Repository übernommen.
+- Adobe-Export: 1.818.377 Byte, vier Seiten, Seitenbilder 4.000×1.600 / 4.000×1.600 / 4.160×1.440 / 3.840×1.600 Pixel; zusammen ca. 24,93 Megapixel. Textschicht vorhanden (3.926 extrahierbare Zeichen), Handschrift nicht zuverlässig als vollständige Tabellendaten erkannt.
+- S2D-Export: 2.092.389 Byte, vier Seiten, Seitenbilder 2.469×890 / 2.331×818 / 2.377×846 / 2.299×797 Pixel; zusammen ca. 7,95 Megapixel. In dieser PDF keine extrahierbare Textschicht. Das beweist keinen generellen Ausfall der App-OCR; Exportoptionen, OCR-Fertigstatus und Textebeneneinbettung sind zu prüfen.
+- Ergebnis dieses Beispiels: S2D ist rund 15,1 % größer trotz etwa 68 % weniger Bildpixeln. Größere Datei ist hier kein Auflösungsgewinn. Wegen unterschiedlichem Zuschnitt, Seitengeometrie und möglicher Import-/Exportparameter kein isolierter Kausalnachweis gegen einen einzelnen Filter.
+- Visuell: Adobe zeigt deutlich weißeren Hintergrund und kräftigere blaue Schrift. S2D ist heller/grauer, körniger und weicher. Bei gleicher Renderingauflösung liegt der Flächenanteil nahezu weißer Pixel (Grauwert >245/255) bei Adobe ca. 79–88 %, bei S2D ca. 65–75 %. Das ist ein unterstützendes Bildmaß, keine OCR-Genauigkeitsquote.
+- Für einen Verbesserungsauftrag vormerken: a) Export-Auflösung und JPEG-Qualität getrennt sichtbar machen und unbeabsichtigte Herunterskalierung lokalisieren; b) Beleuchtung/Hintergrund neutralisieren, blaue Handschrift und feine Tabellenlinien erhalten; c) Kompressionsverfahren/Farbmodus/Bildduplikate untersuchen; d) echte PDF-Textebene nach abgeschlossener OCR kontrollieren; e) Regression mit schmalen handschriftlichen Tabellen, wechselnden Spalten und Doppelseiten.
+- Kein Scanner-Code verändert, kein neuer Build, kein Deployment und keine automatische Vollständigkeitszusage für Handschrifterkennung. Vor Umsetzung reproduzierbaren Vergleich aus denselben Originalaufnahmen mit protokollierten Einstellungen verlangen.
